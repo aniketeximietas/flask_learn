@@ -1,0 +1,11 @@
+vnv/
+*.pyc
+__pycache__/
+rtx/
+venv/
+*.jpg
+*.jpeg
+*.png
+*.img
+.env
+/flask_valid_auth
