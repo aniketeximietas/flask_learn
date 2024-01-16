@@ -97,5 +97,18 @@ def isPassValid(passwd):
 
 
 
-
+# class Student(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     email = db.Column(db.String, nullable=False, unique=True)
+#     first_name = db.Column(db.String(150), nullable=False)
+#     last_name = db.Column(db.String(150), nullable=False)
+#     age=db.Column(db.String(150), nullable=False)
+#     phone = db.Column(db.String(100), unique=True, nullable=False)
+#     password = db.Column(db.String(150), nullable=False)
+#     create_time = db.Column(db.String, default=lambda: datetime.now(timezone.utc).isoformat())
+#     last_login_time = db.Column(db.String, default=None)
+#     jwt_token = db.Column(db.String(200), default=None)
+#     ref_jwt_token = db.Column(db.String(200), default=None)
+#     img_path = db.Column(db.String(200), default=None)
+    
 

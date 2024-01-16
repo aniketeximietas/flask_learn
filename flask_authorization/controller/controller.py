@@ -3,8 +3,6 @@ from flask import jsonify, request, request_finished
 from werkzeug.utils import secure_filename
 from ext import db
 import os
-import phonenumbers
-import logging
 import re
 from modals.models import Employee
 from flask_jwt_extended import get_jwt_identity, jwt_required, unset_jwt_cookies, verify_jwt_in_request
@@ -22,7 +20,7 @@ phone_pattern = r"^(?:\+?(\d{10})|\+?(\d{13}))$"
 
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-upload_folder = 'flask_auth/media'
+upload_folder = 'flask_auth\media'
 
 
 def allowed_file(filename):

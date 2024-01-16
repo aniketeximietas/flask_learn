@@ -6,7 +6,7 @@ from flask import request
 
 ns = Blueprint("ns", __name__)
 
-upload_folder = 'flask_auth/media'
+upload_folder = 'flask_auth\media'
 
 
 @ns.route('/')
