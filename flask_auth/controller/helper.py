@@ -47,51 +47,73 @@ def create_employee(request_data):
 
 
 def update_employee(employee_id, request_data):
+    authorization_header = request.headers.get('Authorization')
 
+    if authorization_header and authorization_header.startswith('Bearer '):
+        bearer_token = authorization_header[len('Bearer '):]
+
+        
     employee = Employee.query.get(employee_id)
-    
-    if not employee:
-        return jsonify(message='Employee not found'), 404
-    
-    email = request_data.get('email',employee.email)
-    if email!=employee.email:
-        user = Employee.query.filter_by(email=email).first()
-        if user:
-            return "user already registered"
-    ph = request_data.get('phone',employee.phone)
-    if ph != employee.phone:
-        usr = Employee.query.filter_by(phone=ph).first()
-        if usr:
-            return "Phone number exist"
+    if employee.jwt_access_token == bearer_token:
+        if not employee:
+            return jsonify(message='Employee not found'), 404
+        
+        email = request_data.get('email',"")
+        if email:
+            user = Employee.query.filter_by(email=email).first()
+            if user and employee_id==user.id:
+                return "you are updating same email"
+            if user:
+                return "email exist"
+        ph = request_data.get('phone',"")
+        if ph:
+            usr = Employee.query.filter_by(phone=ph).first()
+            print(usr)
+            if usr and employee_id==usr.id:
+                return "You updating the same number"
+            if usr:
+                return "Phone number exist"
 
-    employee.email = request_data.get('email', employee.email)
-    employee.first_name = request_data.get('first_name', employee.first_name)
-    employee.last_name = request_data.get('last_name', employee.last_name)
-    employee.phone = request_data.get('phone', employee.phone)
-    passw=request_data.get('password',None)
-    # print("password new in helper ",passw)
-    if passw:
-        employee.password = passw
+        employee.email = request_data.get('email', employee.email)
+        employee.first_name = request_data.get('first_name', employee.first_name)
+        employee.last_name = request_data.get('last_name', employee.last_name)
+        employee.phone = request_data.get('phone', employee.phone)
+        passw=request_data.get('password',None)
+        # print("password new in helper ",passw)
+        if passw:
+            employee.password = passw
 
-    db.session.commit()
-    # result = Employee.query.filter_by(id=employee_id).update({'phone': new_phone})
-    # db.session.commit()
-    return jsonify(message='Employee updated successfully', email=employee.email,
-                   first_name=employee.first_name,
-                   last_name=employee.last_name,
-                   phone=employee.phone), 200
+        db.session.commit()
+        # result = Employee.query.filter_by(id=employee_id).update({'phone': new_phone})
+        # db.session.commit()
+        return jsonify(message='Employee updated successfully', email=employee.email,
+                    first_name=employee.first_name,
+                    last_name=employee.last_name,
+                    phone=employee.phone,
+                    last_login=employee.last_login_time), 200
+    else:
+        return "not auntenticated to update"
 
 
 def login(request_data):
     bcrypt = Bcrypt()
     email = request_data.get('email')
+    if not email:
+        return "email missing"
     password = request_data.get('password')
+    if not password:
+        return "password missing"
     employee = Employee.query.filter_by(email=email).first()
     if not employee:
-        return jsonify(message='Invalid email'), 401
+        return jsonify(message='No Account found'), 401
     is_valid = bcrypt.check_password_hash(employee.password, password)
     if not is_valid:
         return jsonify(message='Invalid password'), 401
+    if employee.jwt_access_token:
+        return jsonify(email=employee.email,
+                       first_name=employee.first_name,
+                       last_name=employee.last_name,
+                       phone=employee.phone, message='already logged in', access_token=employee.jwt_access_token, refresh_token=employee.jwt_refresh_token,login_time=employee.last_login_time), 200
     else:
         employee.last_login_time = datetime.utcnow().isoformat()
         session['logged_in'] = True
@@ -110,7 +132,7 @@ def login(request_data):
         return jsonify(email=employee.email,
                        first_name=employee.first_name,
                        last_name=employee.last_name,
-                       phone=employee.phone, message='Login successful', access_token=access_token, refresh_token=refresh_token,login_time=employee.last_login_time), 200
+                       phone=employee.phone, message='Login successful', access_token=access_token, refresh_token=refresh_token,last_login_time=employee.last_login_time), 200
     # else:
     #     return jsonify(message='Invalid credentials'), 401
 
@@ -124,7 +146,7 @@ def logout(brearer_token):
         db.session.commit()
         return jsonify(message='Logout successful'), 200
     else:
-        return jsonify(message='Employee not found'), 404
+        return jsonify(message='not logged in'), 404
 
 
 def issueAccessToken(refresh_token):
