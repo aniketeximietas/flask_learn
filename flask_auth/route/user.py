@@ -68,26 +68,38 @@ def access():
 
 @user.route('/upload/<int:id>',methods=["POST"])
 def upload(id):
+    authorization_header = request.headers.get('Authorization')
 
+    if authorization_header and authorization_header.startswith('Bearer '):
+        bearer_token = authorization_header[len('Bearer '):]
+        # return issueAccessToken(bearer_token)
     file=request.files["pic"]
     if not file:
         return "no file uploaded",400
     else:
-        emp = Employee.query.get(id)
-        filename = secure_filename(file.filename)
 
-        path=os.path.join('C:\\Users\\Aniket Sahoo\\Desktop\\Learn\\img', filename)
-        emp.image=path
-        db.session.commit()
-        file.save(path)
-        return "file uploaded"
+        emp = Employee.query.get(id)
+        if emp.jwt_access_token == bearer_token:
+            filename = secure_filename(file.filename)
+            if emp.image and os.path.exists(emp.image):
+                os.remove(emp.image)
+            path=os.path.join(os.path.abspath('img'), filename)
+            print("gf   ",path)
+            emp.image=path
+            db.session.commit()
+            file.save(path)
+            return "file uploaded"
+        else:
+            return "not loggedin pass your access token"
     
 
 @user.route('/profileimg/<int:id>',methods=["GET"])
 def uploaded_file(id):
     user=Employee.query.get(id)
-    path=user.image
-    directory,filename=os.path.split(path)
-    
-    return send_from_directory(directory, filename,mimetype="image/jpeg")    
-    
+    if user:
+        path=user.image
+        directory,filename=os.path.split(path)
+        
+        return send_from_directory(directory, filename,mimetype="image/jpeg")    
+    else:
+        return "user not found"
