@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from flask import jsonify, session,request
 from ..extensions import db
-from ..models.employee import Employee
+from ..models.employee import Employee,employeeSchema
 from flask_bcrypt import Bcrypt
 # import jwt
 from werkzeug.utils import secure_filename
@@ -11,39 +11,37 @@ from wtforms.validators import DataRequired, ValidationError
 from flask_jwt_extended import JWTManager, create_access_token, create_refresh_token
 from email_validator import validate_email, EmailNotValidError
 
-bcrypt=Bcrypt()
+
 def create_employee(request_data):
     try:
-        bcrypt = Bcrypt()
-        email = request_data.get('email',"")
-        phone = request_data.get('phone',"")
+        validated_data = employeeSchema.load(request_data)
+        # email = request_data.get('email',"")
+        # phone = request_data.get('phone',"")
 
-        if not email or not phone:
-            return f'missing attribute'
-        user = Employee.query.filter_by(email=email).first()
-        if user:
-            return "user already registered"
-        usr = Employee.query.filter_by(phone=phone).first()
-        if usr:
-            return "Phone number exist"
+        # if not email or not phone:
+        #     return f'missing attribute'
+        # user = Employee.query.filter_by(email=email).first()
+        # if user:
+        #     return "user already registered"
+        # usr = Employee.query.filter_by(phone=phone).first()
+        # if usr:
+        #     return "Phone number exist"
         
-        new_employee = Employee(
-            email=request_data['email'],
-            first_name=request_data['first_name'],
-            last_name=request_data['last_name'],
-            phone=request_data['phone'],
-            password=request_data['password'],
-            # image="filepath"
-        )
+        # print(validated_data)
+        # Create a new Employee instance
+        # print("here i am")
+        new_employee = Employee(**validated_data)
+        # Add to the database
         db.session.add(new_employee)
         db.session.commit()
-        return jsonify(message='Employee created successfully', email=new_employee.email,
-                    first_name=new_employee.first_name,
-                    last_name=new_employee.last_name,
-                    phone=new_employee.phone), 200
+
+        return employeeSchema.dump(new_employee), 200
     except Exception as e:
         print(e)
-        return jsonify(message=str(e))
+        return jsonify(message=str(e)),400
+    # except ValidationError as e:
+    #     # Handle validation errors
+    #     return jsonify(errors=e.messages), 400
 
 
 def update_employee(employee_id, request_data):
@@ -172,7 +170,7 @@ def isThere(access_token):
     if emp:
         return True,emp.first_name
     else:
-        return False
+        return False,"none"
 
 
 def isPassValid(passwd):

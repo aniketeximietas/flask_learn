@@ -1,6 +1,7 @@
+from datetime import timedelta
 from flask import Flask, session
 
-from .extensions import db, migrate
+from .extensions import db, migrate,ma
 from .route.user import user
 from .route.std import std
 from flask_jwt_extended import JWTManager
@@ -12,7 +13,7 @@ def create_app():
     load_dotenv()
     app = Flask(__name__)
     """Put these config code inside a file inside config file and import the config object"""
-
+    # app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=240)
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
@@ -21,6 +22,7 @@ def create_app():
     jwt = JWTManager(app)
     db.init_app(app)
     migrate.init_app(app, db)
+    ma.init_app(app)
 
     app.register_blueprint(user)
     # app.register_blueprint(user,url_prefix="/user")

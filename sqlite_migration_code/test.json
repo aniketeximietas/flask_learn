@@ -1,0 +1,69 @@
+{
+    "cID": "8e5cfdf2-4ffa-423f-885a-37885647f90e",
+    "timestamp": 1705570492129,
+    "conversations": {
+     "11c3172f-cd24-4f42-a0cc-4e09748a598d": {
+      "timestamp": 1705572463176,
+      "message": {
+       "data": [
+       ],
+       "feedback": 3,
+       "message": "Hello there!\nHow are you doing?\nI am a VLSI chat agent who specializes in answering questions related to PCI Express standards and documentation. How may I assist you today?",
+       "role": "bot"
+      },
+      "mID": "11c3172f-cd24-4f42-a0cc-4e09748a598d",
+      "role": "BOT"
+     },
+     "2c51d732-815a-4a9c-bae8-c35dfa9b7572": {
+      "timestamp": 1705570527942,
+      "message": "Hello world",
+      "mID": "2c51d732-815a-4a9c-bae8-c35dfa9b7572",
+      "role": "HUMAN"
+     },
+     "7c1a4efc-aa17-4da7-9374-27432fe45c90": {
+      "timestamp": 1705572705507,
+      "message": {
+       "data": [
+        {
+         "read_url": "https://kbvlsichatbot.s3.amazonaws.com/v2?AWSAccessKeyId=AKIAYQY4LGCXI2KPUDW7&Signature=DiW%2FDB%2FL6UyhWYocGe7gwgJmsMg%3D&Expires=1704864522",
+         "snippets": [
+          {
+           "message": "2.6 Ordering and Receive Buffer Flow Control  Flow Control (FC) is used to prevent overflow of Receiver buffers and to  enable compliance with the ordering rules  defined inSection2.4. Note that the Flow Control mechanism is used by the  Requester to track the queue/buffer space  available in the agent across the Link as shown inFigure 2-48. That is,  Flow Control is point-to-point (across a Link) and  not end-to-end. Flow Control does not imply that a Request has reached  its ultimate Completer.  Intermediate Ultimate  Requester Link Link  Component(s) Completer  OM13776  Figure 2-48 Relationship Between Requester and Ultimate Completer  Flow Control is orthogonal to the data integrity mechanisms used to  implement reliable information exchange between  Transmitter and Receiver. Flow Control can treat the flow of TLP  information from Transmitter to Receiver as perfect,  since the data integrity mechanisms ensure that corrupted and lost TLPs  are corrected through retransmission (see  Section3.6).  Each Virtual Channel maintains an independent Flow Control credit pool.  The FC information is conveyed between two  sides of the Link using DLLPs. The VC ID field of the DLLP is used to  carry the VC ID that is required for proper Flow  Control credit accounting.  Flow Control mechanisms used internally within an MFD are outside the  scope of this specification.  Flow Control is handled by the Transaction Layer in cooperation with the  Data Link Layer. The Transaction Layer  performs Flow Control accounting functions for Received TLPs and “gates”  TLP Transmissions based on available credits  for transmission even if those TLPs are eventually nullified..  Note: Flow Control is a function of the Transaction Layer and, therefore,  the following types of information transmitted  on the interface are not associated with Flow Control Credits: LCRC,  Packet Framing Symbols, other Special Symbols,  Page 1875.0-1.0-PUB—PCI Express® Base Specification Revision 5.0 Version  1.0  and Data Link Layer to Data Link Layer inter-communication packets. An  implication of this fact is that these types of  information must be processed by the Receiver at the rate they arrive  (except as explicitly noted in this specification).  Also, any TLPs transferred from the Transaction Layer to the Data Link  and Physical Layers must have first passed the  Flow Control “gate”.",
+           "reference": ""
+          },
+          {
+           "message": ".  • The unit of Flow Control credit is 4DW for data.  • For headers:         ◦ The unit of Flow Control credit for Receivers that do not support TLP  Prefixes is the sum of one  maximum-size Header and TLP Digest.  ◦ The unit of Flow Control credits for Receivers that support End-End TLP  Prefixes is the sum of one  maximum-size Header, TLP Digest, and the maximum number of End-End TLP  Prefixes permitted in a  TLP.  ◦ The management of Flow Control for Receivers that support Local TLP  Prefixes is dependent on the  Local TLP Prefix type.  • Each Virtual Channel has independent Flow Control.  • Flow Control distinguishes three types of TLPs (note relationship to  ordering rules - seeSection2.4):  ◦ Posted Requests (P) - Messages and Memory Writes  ◦ Non-Posted Requests (NP) - All Reads, I/O Writes, Configuration Writes,  and AtomicOps  ◦ Completions (Cpl) - Associated with corresponding NP Requests  • In addition, Flow Control distinguishes the following types of TLP  information within each of the three types:  ◦ Headers (H)  ◦ Data (D)  • Thus, there are six types of information tracked by Flow Control for  each Virtual Channel, as shown inTable  2-42.  Table 2-42 Flow Control Credit Types  Credit Type Applies to This Type of TLP Information  PH Posted Request headers  PD Posted Request Data payload  NPH Non-Posted Request headers  NPD Non-Posted Request Data payload  CplH Completion headers  CplD Completion Data payload  Page 1885.0-1.0-PUB—PCI Express® Base Specification Revision 5.0 Version  1.0  • TLPs consume Flow Control credits as shown inTable 2-43.",
+           "reference": ""
+          },
+          {
+           "message": ".  • Components must implement independent Flow Control for all Virtual  Channels that are supported by that  component.  • Flow Control is initialized autonomously by hardware only for the  default Virtual Channel (VC0).  ◦ VC0 is initialized when the Data Link Layer is in the DL_Init state  following reset (seeSection3.2and  Section3.4).         • When other Virtual Channels are enabled by software, each newly enabled  VC will follow the Flow Control  initialization protocol (seeSection3.4).  ◦ Software enables a Virtual Channel by setting the VC Enable bits for  that Virtual Channel in both  components on a Link (seeSection7.9.1 andSection7.9.2 ).  Note: It is possible for multiple VCs to be following the Flow Control  initialization protocol simultaneously - each follows  the initialization protocol as an independent process.  • Software disables a Virtual Channel by clearing the VC Enable bits for  that Virtual Channel in both components  on a Link.  ◦ Disabling a Virtual Channel for a component resets the Flow Control  tracking mechanisms for that  Virtual Channel in that component.  • InitFC1 and InitFC2 FCPs are used only for Flow Control initialization  (seeSection3.4).  • An InitFC1, InitFC2, or UpdateFC FCP that specifies a Virtual Channel  that is disabled is discarded without  effect.    2.6.1 .1FC Information Tracked by Transmitter  • For each type of information tracked, there are two quantities tracked  for Flow Control TLP Transmission  gating:  ◦ CREDITS_CONSUMED  ▪ Count of the total number of FC units consumed by TLP Transmissions  made since Flow  [FieldSize]  Control initialization, modulo2 (where[FieldSize]is defined inTable 2- 45).  ▪ Set to all 0's at interface initialization  ▪ Updated for each TLP the Transaction Layer allows to pass the Flow  Control gate for  Transmission as shown:  [FieldSize]  CREDITS_CONSUMED:= (CREDITS_CONSUMED+Increment) mod2  Equation 2-1 CREDITS_CONSUMED  (WhereIncrementis the size in FC credits of the corresponding part of the  TLP passed  through the gate, and[FieldSize]is defined inTable 2-45)  ◦ CREDIT_LIMIT  ▪ The most recent number of FC units legally advertised by the Receiver.  This quantity  represents the total number of FC credits made available by the Receiver  since Flow Control  [FieldSize]  initialization, modulo2 (where[FieldSize]is defined inTable 2-45).",
+           "reference": ""
+          },
+          {
+           "message": "◦ The management of Flow Control for Receivers that support Local TLP  Prefixes is dependent on the  Local TLP Prefix type.  • Each Virtual Channel has independent Flow Control.  • Flow Control distinguishes three types of TLPs (note relationship to  ordering rules - seeSection2.4):  ◦ Posted Requests (P) - Messages and Memory Writes  ◦ Non-Posted Requests (NP) - All Reads, I/O Writes, Configuration Writes,  and AtomicOps  ◦ Completions (Cpl) - Associated with corresponding NP Requests  • In addition, Flow Control distinguishes the following types of TLP  information within each of the three types:  ◦ Headers (H)  ◦ Data (D)  • Thus, there are six types of information tracked by Flow Control for  each Virtual Channel, as shown inTable  2-42.  Table 2-42 Flow Control Credit Types  Credit Type Applies to This Type of TLP Information  PH Posted Request headers  PD Posted Request Data payload  NPH Non-Posted Request headers  NPD Non-Posted Request Data payload  CplH Completion headers  CplD Completion Data payload  Page 1885.0-1.0-PUB—PCI Express® Base Specification Revision 5.0 Version  1.0  • TLPs consume Flow Control credits as shown inTable 2-43.  Table 2-43 TLP Flow Control Credit Consumption  TLP Credit Consumed38  Memory, I/O, Configuration Read Request 1 NPH unit  Memory Write Request 1 PH + n PD units39  1 NPH + 1 NPD  I/O, Configuration Write Request  Note: size of data written is never more than 1 (aligned) DW  AtomicOp Request 1 NPH + n NPD units  Message Requests without data 1 PH unit  Message Requests with data 1 PH + n PD units  Memory Read Completion 1 CplH + n CplD units  I/O, Configuration Read Completions 1 CplH unit + 1 CplD unit  I/O, Configuration Write Completions 1 CplH unit  1 CplH unit + 1 CplD unit  AtomicOp Completion  Note: size of data returned is never more than 4 (aligned) DWs.  • Components must implement independent Flow Control for all Virtual  Channels that are supported by that  component.  • Flow Control is initialized autonomously by hardware only for the  default Virtual Channel (VC0).  ◦ VC0 is initialized when the Data Link Layer is in the DL_Init state  following reset (seeSection3.2and  Section3.4).",
+           "reference": ""
+          }
+         ],
+         "source": "v2"
+        }
+       ],
+       "feedback": 2,
+       "message": "Flow control in PCIe works by having the transmitter track the number of flow control credits available for each virtual channel. The receiver advertises credits to the transmitter using DLLPs. \n\nFor each virtual channel, the transmitter tracks:\n\n- CREDITS_CONSUMED - The number of credits consumed since initialization, used to gate further transmissions. Incremented when TLPs are allowed to pass through the flow control gate.\n\n- CREDIT_LIMIT - The number of credits advertised by the receiver. \n\nWhen transmitting a TLP, the appropriate number of credits for that TLP are consumed from CREDITS_CONSUMED. Transmission is only allowed if CREDITS_CONSUMED does not exceed CREDIT_LIMIT after decrementing.\n\nThe receiver replenishes CREDIT_LIMIT by sending UpdateFC DLLPs. Each virtual channel is initialized and managed independently. Flow control credits are accounted for headers and data payloads separately for posted requests, non-posted requests and completions.",
+       "role": "bot"
+      },
+      "mID": "7c1a4efc-aa17-4da7-9374-27432fe45c90",
+      "role": "BOT"
+     },
+     "f3a204df-a4a9-4a68-88b5-29e64fea1017": {
+      "timestamp": 1705570624298,
+      "message": "Ohh Cool",
+      "mID": "f3a204df-a4a9-4a68-88b5-29e64fea1017",
+      "role": "BOT"
+     }
+    },
+    "created_at": 1705570492129,
+    "email": "npriyajit1@gmail.com",
+    "isDefaultRenamed": true,
+    "title": "Hello world",
+    "updated_at": 1705570527678
+   }

@@ -1,10 +1,11 @@
 from flask import Flask
+from flask_restx import Resource
 from res import ns
 from ext import api,db
 from flask_migrate import Migrate
 
 app=Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db1.sqlite3"
 
 api.init_app(app)
 db.init_app(app)

@@ -1,0 +1,362 @@
+[
+    {
+     "record": 0,
+     "question": "FD gives me the freedom to withdraw whenever necessary. Do debt funds offer the same?",
+     "answer": "a.Yes, you can withdraw from debt funds anytime. But remember that since the debt funds are market linked, your net proceeds will be subject to market growth and fluctuations. \nb.One advantage of debt funds over FD is that you can withdraw a small amount as per your need while with FD, you will have to break the entire FD."
+    },
+    {
+     "record": 1,
+     "question": "If I want to liquidate the investment, what is the process and how soon can it be done?",
+     "answer": "a.It’s pretty straightforward to withdraw money from your investment. In the MIRA Money app, go to Dashboard -> \tSelect your investment -> Withdraw -> Enter the amount that you want to withdraw. The money will be credited to your \tlinked bank account within 3 to 5 business days."
+    },
+    {
+     "record": 2,
+     "question": "Is there a minimum investment amount?",
+     "answer": "a.You can start with as low as Rs 5k per month for SIP type of investments or Rs 10k if you want to invest one time \/lumpsum investment."
+    },
+    {
+     "record": 3,
+     "question": "What is the applicable NAV for my investment?",
+     "answer": "a.From the date of payment, you  will get either T+1 or T+2 NAV depending on mutual fund house and time of \tinvestment (after hours, etc)"
+    },
+    {
+     "record": 4,
+     "question": "What are the charges to withdraw funds?",
+     "answer": "a.It’s called Exit Load and it varies depending on if the fund is active or passive\/index fund and investment period. Withdrawing from some SIP investments within a year will incur exit charges in the range of 0.5% to 2%. \nb.Exit load for all fund schemes is provided as part of the Scheme document and displayed in our app under fund details"
+    },
+    {
+     "record": 5,
+     "question": "How do I cancel my Bank Mandate?",
+     "answer": "a.In the MIRA Money app, go to Account -> Manage Mandate. Here you can cancel your mandate. Please remember that, \tonce you cancel your mandate, all active SIPs will fail during the next SIP transaction."
+    },
+    {
+     "record": 6,
+     "question": "How am I guaranteed that the money that is debited from my account is invested in the right fund?",
+     "answer": "a.When we invest your money in one or more mutual funds, there are a couple of ways to check.\n        i.In the MIRA Money app, you can check the list of funds and the amount invested in each of these funds. We confirm the same via email as well. \n        ii.You get confirmation emails from mutual fund houses directly for the amount invested. \n        iii.You can check your portfolio directly on the mutual fund house portal \n        iv.You can import your portfolio to other platforms like Groww, etc using your PAN number and check your investments"
+    },
+    {
+     "record": 7,
+     "question": "What if a Franklin Templeton like situation happens?",
+     "answer": "a.While we do thorough analysis of fund houses and select funds from leading 3 or 4 fund houses, there is no \tguarantee that a Franklin Templeton like situation doesn't happen. In case of unforeseen circumstances like this, \tsince the mutual funds are regulated by SEBI, SEBI supervises selling of funds assets and investors get their money \tback."
+    },
+    {
+     "record": 8,
+     "question": "What happens to my investment if the fund house goes down?",
+     "answer": "a.When a Mutual Fund Company shuts down or gets sold off, it is a serious matter to note for any existing investor. However, as Mutual Funds are regulated by SEBI, events of such kind have a prescribed process.\n        In the case of a Mutual Fund company shutting down, either the trustees of the fund have to approach SEBI for approval to close or SEBI by itself can direct a fund to shut. In such cases, all investors are returned their funds based on the last available net asset value, before winding up.\n        If a Mutual Fund is acquired by another fund house, then there are usually two options. One, the schemes continue in their original format, albeit with a new fund house overseeing it. Or, the acquired schemes are merged with schemes in the new fund house. SEBI approval is required for all Asset Management Company (AMC) Mergers and Acquisitions, as well as scheme level mergers too.\n\n        In all such cases, investors are given an option to exit the schemes with no load being levied. Any action by an investor or fund house is ALWAYS done at prevailing Net Asset Value."
+    },
+    {
+     "record": 9,
+     "question": "When I invest, do I transfer the money to MIRA?",
+     "answer": "a.No. When you invest, your money goes directly from your bank account to the bank accounts of mutual funds houses \tfor the funds we are buying for you."
+    },
+    {
+     "record": 10,
+     "question": "Why should my existing portfolios be a part of Mira Money, or be linked to Mira Money in any way?",
+     "answer": "a.Managing your portfolio involves 3 main tasks for us : \n\ti.Selection of the right funds from hundreds of mutual funds \n\tii.Allocation of the right amount in each of the funds based on your risk profile \n\tiii.Active monitoring of your portfolio and rebalancing your portfolio periodically to make sure your investments \tare on track \n\tSo in order for us to manage your portfolio, we would need your investments to be part of our platform."
+    },
+    {
+     "record": 11,
+     "question": "How can I trust you not to misuse my mandate, bank account and other information?",
+     "answer": "a.Thanks to SEBI’s strict compliance rules. No investment via SIP or lumpsum or withdrawal or adjustments to your \tportfolio can happen without your explicit approval using OTP sent to your phone. So there is absolutely no room for \tany misuse of mandate or bank account or other information."
+    },
+    {
+     "record": 12,
+     "question": "My debit was successful but my transaction in the app has failed. When will my money be refunded?",
+     "answer": "a.Nothing to worry about. By compliance, all transactions have to settle within 2 business days. So if the \ttransaction has failed, your money will be refunded within 48 hours."
+    },
+    {
+     "record": 13,
+     "question": "In whose name will the investments be?",
+     "answer": "a.All investments will be done in your name. No purchases or withdrawals or adjustments in your portfolio will be \tdone without your explicit consent via OTP authorization sent to your phone."
+    },
+    {
+     "record": 14,
+     "question": "Finally, why are my bank account details required?",
+     "answer": "a.As per SEBI compliance, the money for your investments can be transferred only from your registered bank account. \tHence you need to link your bank account with your investments account."
+    },
+    {
+     "record": 15,
+     "question": "Mira money will have authority to do transactions from my bank account directly? Or will it be a lump sum money I put into Mira Money and that will be used for transactions of mutual funds?",
+     "answer": "a.With your permission, yes for recurring transactions. If you are doing SIP investments, you are required to authorize us to invest on your behalf regularly (currently at monthly internal) by creating and approving a emandate. In this case, our platform withdraws the specified SIP amount from your linked bank account on the specified date and invests that money into your portfolio. \nb.As you rightly pointed out, you can also do STP (Systematic Transfer Plan) where we invest your lumpsum money in a liquid fund and setup daily\/weekly\/etc recurring transfers for your investment."
+    },
+    {
+     "record": 16,
+     "question": "How are you generating 17% returns if it’s just index funds?",
+     "answer": "a.We are able to generate good returns and alpha over the index because of active asset allocation and rebalancing"
+    },
+    {
+     "record": 17,
+     "question": "I already have investments in Index funds and now I want to diversify by allocating some towards active funds. Why should I invest with your platform?",
+     "answer": "a.Our platform provides an excellent opportunity for investors to take advantage of our time tested allocation and \trebalancing algorithms. We believe this can generate significant alpha to our customers over a long period of time"
+    },
+    {
+     "record": 18,
+     "question": "What is goal based investing?",
+     "answer": "a.Goal based investing is aimed at meeting  the finance required for a life goal. For Example: If an investor wants to invest towards child college education which is coming up after 18 years, we can help that investor achieve his goal using the calculators on our platform. Here we consider the following:\n        1)Investors need\n        2)How much can the investor invest initially\n        3)How much should the investor invest monthly\n        4)How much do we expect the markets to grow\n        5)How should the allocation vary to ensure the goal is met"
+    },
+    {
+     "record": 19,
+     "question": "What has been your past returns with actual investors?",
+     "answer": "In the calendar year 2023, Investors who have been with us throughout the year have got 32.7% returns"
+    },
+    {
+     "record": 20,
+     "question": "How frequently is portfolio rebalancing done and why?",
+     "answer": "a.We rebalance once every 6 months. However if our analysis finds a necessity to rebalance in between the 6 month \tperiod, we do that"
+    },
+    {
+     "record": 21,
+     "question": "I’m not comfortable investing in small cap index, since it performs poorly compared to small cap active funds. Why do you choose to invest in a small cap index when it’s clearly inferior to active funds?",
+     "answer": "a.Small cap index funds have beaten around 50% of the active funds. True it hasn’t been as good as large cap index \tfunds in beating the active funds. But, we feel the ratio still tilts in index fund favor. We also believe going \tforward it will keep getting tougher for actively managed funds to beat the index. Few of the popular fund managers \twe interacted with concur the same\n\tb.Also, we at MIRA money believe that the right asset allocation is what creates alpha. We would like to avoid any \tfund manager bias negating the alpha created due to allocation. However we are not averse to considering actively \tmanaged funds when we are convinced that they provide better value to our clients. We have done it with certain \tsector based funds"
+    },
+    {
+     "record": 22,
+     "question": "If you only do index investing and my tenure is long (20 years), why can’t I just invest in a direct nifty 50 index fund?",
+     "answer": "Your past returns have been 15-17% returns but this may or may not continue being the case.\n\ta.Just investing in just Nifty50 will provide you exposure to only the largest 50 stocks in India. Our analysis has \tshown that allocating across market caps and sectors in different proportions based on our inhouse risk\/reward \tcomputation methodology provides much better returns"
+    },
+    {
+     "record": 23,
+     "question": "If my tenure is less than 3 years, why not go for active mutual funds like quant since they offer handsome returns?",
+     "answer": "a.Tenure has very little to do with returns. However it is advisable to have a tenure greater than 3 years to invest \tin equities. Chasing performance has generally not worked out well historically with active funds. Funds that have \tgiven market beating returns over a 5 years period have rarely repeated that performance over the next 5 years."
+    },
+    {
+     "record": 24,
+     "question": "I’m young and willing to take risks. Why should I invest in index funds?",
+     "answer": "a.Historic data shows index funds create better returns than most actively managed funds. Also with actively managed \tfunds history has shown that a fund that has beat the index in a few years rarely can repeat that performance \tconsistently over a long period. Our many analysis have shown that investing in index funds and doing active \tallocation and rebalancing is the best way to generate long term good returns"
+    },
+    {
+     "record": 25,
+     "question": "There is still a small percentage of funds which beat the index, why should I not invest in them?",
+     "answer": "You are right. As per SPIVA (S&P Indices Vs Active) report, a large % of largecap, midcap and smallcap active funds \tfailed to beat the \n\tindex\/benchmark. So for long term investing, index funds are a better choice."
+    },
+    {
+     "record": 26,
+     "question": "Index funds are best in developed countries like the US. Is it the case in India too even though we are a developing country?",
+     "answer": "India's nominal GDP forecast to rise from $3.5 trillion in 2022 to $7.3 trillion by 2030. S&P Global has projected \tthat India would become the third largest economy in the world by 2030. Based on IMF data, India is currently placed \tat the fifth slot with the size of its economy at over $3.7 trillion. As India’s economy grows, so does the equity \tmarket. As index funds are composed of top 250 stocks based on market capitalization, it’s beneficial to invest in \tindex funds in India."
+    },
+    {
+     "record": 27,
+     "question": "Am I too old to start investing?",
+     "answer": "a.Anyone 18 years old or above is eligible to invest in mutual funds"
+    },
+    {
+     "record": 28,
+     "question": "Funds I want to invest in are missing. How do I invest in them?",
+     "answer": "a.Our investment team does thorough research and creates baskets of funds considering various factors like fund \thouse, growth potential, risk to investment, exit load, tracking error, fee, etc. So there is no need for investors \tto select funds on our platform."
+    },
+    {
+     "record": 29,
+     "question": "Why do I have to go with a regular plan when I can save more on a direct plan?",
+     "answer": "a.In a direct plan, you are doing the research, selection of funds, allocation to various funds and rebalancing of \tfunds. In the regular plan, we do all this for you considering your investment objectives, risk tolerance and tenure \tof the investment."
+    },
+    {
+     "record": 30,
+     "question": "What role does a fund manager play in index funds?",
+     "answer": "a.Though the fund managers have no role in stock selection for index fund, they are responsible to match the index \tfunds performance to that of index and maintain low tracking error."
+    },
+    {
+     "record": 31,
+     "question": "I’m very young and I don’t have the cash flows to invest regularly. Will investing a small amount now really make a significant impact in the future?",
+     "answer": "a.Yes, very much. Young investors have the advantage of staying invested for long. With time and regular investment \tlike SIP, even a small investment can grow to a significant amount due to the magic of compounding."
+    },
+    {
+     "record": 32,
+     "question": "I want to invest through the app but I also want you to manage my stock portfolio. How much will you charge for this?",
+     "answer": "a.We do not support stock investing at this time."
+    },
+    {
+     "record": 33,
+     "question": "What is the value that MIRA brings in, while I myself can invest in index funds?",
+     "answer": "a.While you can invest in one or more index funds, our investment baskets are composed of curated funds which are \tselected considering funds growth potential, risk factor and bunch of other macro economics  factors that might \timpact your investment."
+    },
+    {
+     "record": 34,
+     "question": "What is meant by the data of my folio will be overwritten by current data?",
+     "answer": "a. All investments thru MIRA Money or any investment platform require a valid KYC. So when you do KYC thru our \tplatform, any KYC related information (name, email, address, phone number, etc) you provide will be submitted to the \tKYC service and this new information will become current information for your KYC in KYC systems."
+    },
+    {
+     "record": 35,
+     "question": "Can I call you for investment advice? If yes, how much do you charge for it?",
+     "answer": "a.Yes, only for mutual fund related advice. We do not charge for advice as we are a mutual fund distributor and we get our commission from mutual funds houses for the investments you make."
+    },
+    {
+     "record": 36,
+     "question": "Why should my existing portfolios be a part of Mira Money, or be linked to Mira Money in any way?",
+     "answer": "a.Managing your portfolio involves 3 main tasks for us : \n        i.Selection of the right funds from hundreds of mutual funds \n        ii.Allocation of the right amount in each of the funds based on your risk profile \n        iii.Active monitoring of your portfolio and rebalancing your portfolio periodically to make sure your investments are on track. So in order for us to manage your portfolio, we would need your investments to be part of our platform."
+    },
+    {
+     "record": 37,
+     "question": "Can I create an account for a minor?",
+     "answer": "a.No. Investors need to be 18 years or above."
+    },
+    {
+     "record": 38,
+     "question": "How to create an account on MIRA?",
+     "answer": "a.Account creation on MIRA Money is a very straightforward process. Once you download the app, enter your phone \tnumber, pick a PIN and you are done. To invest, you would need to go thru KYC process and you can create KYC from \tthe main page of the app. If you have already invested in mutual funds on any other platform, you are already KYC \tverified so we just have to validate your KYC which is a very simple process."
+    },
+    {
+     "record": 39,
+     "question": "Can I invest in Daily, Weekly or Quarterly SIPs?",
+     "answer": "a.At this time, we support only Monthly SIP on our platform."
+    },
+    {
+     "record": 40,
+     "question": "Where does my money go?",
+     "answer": "a.SEBI has standardized this process to ensure that the investors money is not misused by any parties involved. When \tyou invest, your money goes directly from your bank account to the mutual fund houses for the funds you buy."
+    },
+    {
+     "record": 41,
+     "question": "What is Step-Up SIP, and how do I use it?",
+     "answer": "a.Step-Up SIP is increasing your SIP contribution by a certain percentage every year. Generally, working \tprofessionals opt for step-up SIP and align the step-up amount to the annual increment they might get in their job."
+    },
+    {
+     "record": 42,
+     "question": "What is a Systematic Withdrawal Plan or SWP?",
+     "answer": "a.SWP is similar to SIP but for withdrawing the money. You can set up to withdraw a certain amount from your \tinvestments at specific intervals."
+    },
+    {
+     "record": 43,
+     "question": "How can I bring my current funds to your platform? Can I map them to my goals?",
+     "answer": "a.Unfortunately, there is no standard mechanism exists in the industry today to transfer funds from one place to another or map. You would have to sell your existing portfolio and invest on our platform."
+    },
+    {
+     "record": 44,
+     "question": "Do you deal only in Mutual Funds?",
+     "answer": "As we are fund distributors we deal with many other asset classes and fund types too. We have a Private Wealth \tdivision and the products offered there apart from Mutual Funds are PMS, AIF, VC Funds, Startups, Rental Income \tFunds and Offshore investing. But we strongly believe Mutual Funds are one of the best and simplest ways to create \twealth."
+    },
+    {
+     "record": 45,
+     "question": "What are your charges, how do you make money?",
+     "answer": "As per the license we cannot charge the investor. We get brokerages paid out by the fund houses. When you invest via \tMIRA Money, the fund houses pays us a commission out of the fund management charges charged on your portfolio. \tUsually the Fund Management Charges range from 0.4% - 0.65% annually and we make about 40% of that as commissions."
+    },
+    {
+     "record": 46,
+     "question": "How is the commission calculated?",
+     "answer": "The funds charge a fund management charge on the investment. The fund management charges are mentioned in the app. \tEvery day on the closing fund value that fund management charges are charged. For example"
+    },
+    {
+     "record": 47,
+     "question": "Where can I see the invested portfolio? Do you have a dashboard?",
+     "answer": " The app has a custom built dashboard consisting of all your investments and funds."
+    },
+    {
+     "record": 48,
+     "question": "Where is the investment held, do I need a demat? How is it safe?",
+     "answer": " The investments are held in your name with the mutual funds. For every investment you make you would be getting a folio number and that is your reference number. You don’t need a demat account to make the investment. As the investments are held in your name with mutual funds you can redeem whenever you want to directly or via other apps."
+    },
+    {
+     "record": 49,
+     "question": "How will you generate more returns?",
+     "answer": "Studies have shown that actively managed funds are underperforming benchmark itself. While there is enough proof \tthat only allocation at the right time and exiting when risks becomes higher can drive higher returns. We believe \tevery asset moves in cycles and hence its important to exit when cycle looks like it peaked out and go big when the \tcycle bottoms out. If we do this regularly most of the times we would be able to generate alpha."
+    },
+    {
+     "record": 50,
+     "question": "What is your investment philosophy?",
+     "answer": "RAPID – Risk Adjusted Portfolio with Integrated Diversification\n\tThe core philosophies of MIRA Money are\n\tAllocation drives higher returns than timing and fund choice.\n\tReduce Portfolio Risks to generate higher returns. Actively manage funds to buy, hold and sell when necessary. \n\tInvest in assets that are easy to understand, invest & redeem."
+    },
+    {
+     "record": 51,
+     "question": "Can I link my existing portfolio to MIRA?",
+     "answer": "Right now we don’t have the option to link but that is a part of our plan in the future."
+    },
+    {
+     "record": 52,
+     "question": "How can I liquidate my investment, how long does it take?",
+     "answer": "If you wish to liquidate you can sell the investments and the funds will return back to your registered bank \taccount. For Debt Funds it takes 1 working day, For Equity it take 2 working days and various international FoF it \ttakes 5 days."
+    },
+    {
+     "record": 53,
+     "question": "What is MIRA Money:",
+     "answer": "MIRA stands for Money Invested in Right Assets.\n\tMIRA Money is a SEBI \/ AMFI Registered Fund Distribution Platform.\n\tMIRA Money helps in managing your money by investing across various asset classes."
+    },
+    {
+     "record": 54,
+     "question": "What is the onboarding process?",
+     "answer": "If you are a KYC compliant investor, we would need 2 documents like PAN Card and Cheque Leaf copy to onboard. In \taddition you need to fill in your FATCA and Nomination details. This process is completely online and can be \tcompleted in less than 10 minutes."
+    },
+    {
+     "record": 55,
+     "question": "Who will operate the account? In whose name is the investment? ",
+     "answer": " The entire operation is done by you. While the platform helps you build your portfolio by recommending the right set of index funds, the approval , payment has to be done by the investor. The investments are done in the investor name only. There is no financial transaction between us and you."
+    },
+    {
+     "record": 56,
+     "question": "Why do you need PAN and Bank details?",
+     "answer": "PAN is required for all investments you make and also to check your KYC status. Bank details are required to be \tverified to avoid third party transactions"
+    },
+    {
+     "record": 57,
+     "question": "Who manages the portfolio? Who does the rebalancing and monitoring?",
+     "answer": "The portfolio is watched by the investment team on MIRA Money using Hawk Eye technology. Any suggestions of rebalancing is done after thorough analysis of the portfolio and also your lifestage and goal stage. The recommendations are auto fed and sent for your approval."
+    },
+    {
+     "record": 58,
+     "question": "Why index funds? Why regular plan?",
+     "answer": "We invest only in Index Funds across all asset classes like Equity, Debt or Commodities. We believe the right way to generate better returns is by allocating investments in the right assets. To avoid fund manager bias & underperformance we invest only in index funds. We believe our investment framework RAPID will help generate better returns on index funds. \n        As we are Regd as Fund Distribution Platform we can offer only regular plans. Hence we do not charge the investors."
+    },
+    {
+     "record": 59,
+     "question": "If you shut the firm what happens to my investment?",
+     "answer": "Nothing. We don’t hold the funds. Your investments are done directly with the fund houses. We are just enablers. We \thelp in building, managing your portfolio and executing the plan. We are just the intermediary."
+    },
+    {
+     "record": 60,
+     "question": "Why should I give my money to MIRA?",
+     "answer": "If you are looking for an investment team that has managed a few hundred crores of investment over 2 decades and at \tthe lowest possible cost, there is no other platform better than MIRA Money. With the technology stack that is being \tbuilt and RAPID framework we should be able to grow the portfolios at the optimal rate. We have done it in the past \tand will do so in the future too."
+    },
+    {
+     "record": 61,
+     "question": "Are the mutual fund units stored in my demat account, or are they held by the respective AMCs?",
+     "answer": "Investing in mutual funds does not require a demat account. You need only a valid KYC. All your investments are held \tby respective AMCs and CAMS\/Karvy act as bookkeeper\/registrars keeping track of all transactions."
+    },
+    {
+     "record": 62,
+     "question": "How can I track my existing portfolio?",
+     "answer": "a.In the MIRA Money app, we have a detailed dashboard with all your investment details, transactions, overall \tportfolio level performance as well as investment level performance, funds invested, amount invested in each fund, \tetc"
+    },
+    {
+     "record": 63,
+     "question": "What is asset allocation?",
+     "answer": "a.In the world of investments, one can invest in different types of assets. Planning and deciding on how much money should be allocated to which asset is called asset allocation.b.For example: In the context of equity investing, one can broadly classify equities based on market capitalization(Large cap companies, mid cap companies and small cap companies). Deciding on how much of investors' money should be invested in large, mid and small cap companies is called asset allocation."
+    },
+    {
+     "record": 64,
+     "question": "What is a benchmark?",
+     "answer": "a.Each mutual fund is obliged to publish its performance in comparison with the index which closely matches the  mandate of the mutual fund. This index fund is called the benchmark.\n b.For Example: A large cap mutual fund like HDFC Top 100 fund needs to compare its performance with NIFTY 100 TRI  index. Hence NIFTY 100 TRI is the benchmark"
+    },
+    {
+     "record": 65,
+     "question": "What kind of debt funds do you offer?",
+     "answer": "a.We review all debt funds. We choose the funds which meet the following criteria:\n\t1)Current debt market situation\n\t2)Tax efficiency\n\t3)Fund AUM\n\t4)Fund holdings\n\t5)Fund YTM and interest rate sensitivity\n\t6)Fund manager history and thought process(based on our discussions with the fund manager)"
+    },
+    {
+     "record": 66,
+     "question": "What is indexation?",
+     "answer": "a.Indexation is a taxation method which takes into account the value erosion due to inflation. The cost basis of an \tasset is increased based on inflation. This helps in greatly reducing the taxation on the profits earned"
+    },
+    {
+     "record": 67,
+     "question": "What is an Index Fund?",
+     "answer": "a.Index funds are mutual funds which replicate the index."
+    },
+    {
+     "record": 68,
+     "question": "Why are Index Funds so cheap?",
+     "answer": "a.Index funds are cheap because the fund does not need an investment team or an analysis team to decide on which \tstocks or bonds to buy and sell. Hence the costs are greatly reduced."
+    },
+    {
+     "record": 69,
+     "question": "Who manages Index Funds?",
+     "answer": "a.Index funds are managed by a fund manager. However, the fund manager does not decide on the underlying holdings. \tIt is decided by the regulatory body called the IISL. The decision is based on predefined algorithms and filters."
+    },
+    {
+     "record": 70,
+     "question": "How do you rebalance your portfolio?",
+     "answer": "a.At MIRA money we constantly review all types of market caps, sectors and factor based indexes to identify their \tvaluation and future growth prospects. If during these reviews we find a need to rebalance our clients portfolios, \twe strategically initiate buy sell orders in our customers’ portfolios. Once the customer approves the transactions, \tthen our backend system will finish the planned transaction. During the process we take care to see that customers \tare communicated well in advance, tax implications are minimal and customers’ involvement is minimal"
+    },
+    {
+     "record": 71,
+     "question": "What is rebalancing?",
+     "answer": "a.From time to time different asset classes increase or decrease in value. That might make the asset class expensive \tor cheap. Rebalancing is the process of changing the allocations in an investment based on future prospects of each \tasset class and investors changing profile"
+    }
+   ]
